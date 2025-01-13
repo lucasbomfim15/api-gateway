@@ -16,4 +16,14 @@ export class ClientProxySmartRanking {
       },
     });
   }
+
+  getClientProxyDesafiosInstance(): ClientProxy {
+    return ClientProxyFactory.create({
+      transport: Transport.RMQ,
+      options: {
+        urls: [`amqp://admin:admin123@localhost:5672/smartranking')}`],
+        queue: 'desafios',
+      },
+    });
+  }
 }
